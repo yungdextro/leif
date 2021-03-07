@@ -9,9 +9,9 @@ void setup() {
 
   size(800, 600);
 
-  theEagleImage = loadImage("theEagle.png");
-  theLeifImage = loadImage("leif in an alien saucer 1.png");
-  skyImage = loadImage("himlen2.png");
+  theEagleImage = loadImage("bilder/theEagle.png");
+  theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
+  skyImage = loadImage("bilder/himlen2.png");
 
   theEagle = new Lander();
 }
