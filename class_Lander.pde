@@ -15,7 +15,7 @@ class Lander {
 
 
   Lander() {
-    position = new PVector(0,0);
+    position = new PVector(0, 0);
     velocity = new PVector(0.3, 0.3);
     acceleration = new PVector(0, 0);
     totalForce = new PVector(0, 0);
@@ -25,6 +25,32 @@ class Lander {
     pushMatrix();
     translate(position.x, position.y);
     image(theEagleImage, 0, 0);
+
+
+    if (frontThruster) {
+
+      pushMatrix();
+      translate(-9,-40);
+    //  rotate(radians(180));
+      image(FlameImage, 0, 0);
+      popMatrix();
+      
+    }
+    if (backThruster) {
+      pushMatrix();
+      image(FlameImage, 0, 0);
+       translate(90,145);
+     rotate(radians(90));
+      
+      popMatrix();
+    }
+    if (leftThruster) {
+      image(FlameImage, 0, 0);
+    }
+    if (rightThruster) {
+      image(FlameImage, 0, 0);
+    }
+    
     popMatrix();
   }
 
