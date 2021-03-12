@@ -1,5 +1,5 @@
 Lander theEagle;
-
+Leif theLeif;
 
 PImage theEagleImage, skyImage, theLeifImage;
 
@@ -14,10 +14,12 @@ void setup() {
   skyImage = loadImage("bilder/himlen2.png");
 
   theEagle = new Lander();
+  theLeif = new Leif();
 }
 
 void draw() {
   image(skyImage, 0, 0);
 
   theEagle.update();
+  theLeif.update();
 }
