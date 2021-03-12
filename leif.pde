@@ -1,7 +1,7 @@
 Lander theEagle;
 Leif theLeif;
 
-PImage theEagleImage, skyImage, theLeifImage;
+PImage theEagleImage, skyImage, theLeifImage, FlameImage;
 
 float gravity = 0;
 
@@ -12,6 +12,7 @@ void setup() {
   theEagleImage = loadImage("bilder/theEagle.png");
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
   skyImage = loadImage("bilder/himlen2.png");
+  FlameImage = loadImage("Flame.png")
 
   theEagle = new Lander();
   theLeif = new Leif();
