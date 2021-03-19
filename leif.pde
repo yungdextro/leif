@@ -12,7 +12,7 @@ void setup() {
   theEagleImage = loadImage("bilder/theEagle.png");
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
   skyImage = loadImage("bilder/himlen2.png");
-  FlameImage = loadImage("Flame.png")
+  FlameImage = loadImage("bilder/Flame.png");
 
   theEagle = new Lander();
   theLeif = new Leif();
