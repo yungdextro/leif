@@ -3,7 +3,7 @@ Leif theLeif;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage;
 
-float gravity = 0;
+float gravity = 0.005;
 
 void setup() {
 

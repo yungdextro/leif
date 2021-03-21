@@ -13,12 +13,7 @@ class Leif {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-    //  rotate(velocity.heading() + radians(90));
-    
-    
     image(theLeifImage, 0, 0);
-    
-    
     popMatrix();
   }
 
