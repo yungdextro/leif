@@ -27,8 +27,7 @@ class Lander {
 
     if (frontThruster) {
       pushMatrix();
-      translate(-9, -40);
-      rotate(radians(180));
+      translate(-9, -50);
       image(FlameImage, 0, 0);
       popMatrix();
     }
