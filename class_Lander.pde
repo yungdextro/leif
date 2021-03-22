@@ -74,16 +74,9 @@ class Lander {
     }
     totalForce.add(0, gravity*mass);
 
-
-
     acceleration = PVector.div(totalForce, mass);
-
-
-
-    position.add(velocity);
     velocity.add(acceleration);
-
-
+    position.add(velocity);
 
     display();
   }

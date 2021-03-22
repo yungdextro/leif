@@ -3,6 +3,8 @@ class Leif {
   PVector position;
   PVector velocity;
   PVector acceleration;
+  
+  float speed = 2.5;
 
   Leif() {
     position = new PVector(600, 0);
@@ -42,7 +44,7 @@ class Leif {
 
     if (frameCount % 200 == 0) {
       velocity = PVector.sub(theEagle.position, position);
-      velocity.setMag(0.5);
+      velocity.setMag(speed);
 
     }
   }
