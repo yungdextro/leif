@@ -1,10 +1,9 @@
 Lander theEagle;
 Leif theLeif;
-// test
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage;
 
-float gravity = 0.005;
+float gravity = 0.003;
 
 void setup() {
 

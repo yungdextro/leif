@@ -7,7 +7,7 @@ class Dashboard {
     displayDash();
     displayXspeedDial();
     displayXspeedDial();   
-    displayFuelDial();
+  //  displayFuelDial();
   }
   
   void displayDash(){
