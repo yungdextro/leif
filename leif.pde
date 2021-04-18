@@ -23,4 +23,6 @@ void draw() {
 
   theEagle.update();
   theLeif.update();
+  
+ // collisionCheck();
 }
