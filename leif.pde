@@ -1,10 +1,9 @@
 Lander theEagle;
 Leif theLeif;
-// test
 
-PImage theEagleImage, skyImage, theLeifImage;
+PImage theEagleImage, skyImage, theLeifImage, FlameImage;
 
-float gravity = 0;
+float gravity = 0.003;
 
 void setup() {
 
@@ -13,6 +12,7 @@ void setup() {
   theEagleImage = loadImage("bilder/theEagle.png");
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
   skyImage = loadImage("bilder/himlen2.png");
+  FlameImage = loadImage("bilder/Flame.png");
 
   theEagle = new Lander();
   theLeif = new Leif();
@@ -23,4 +23,6 @@ void draw() {
 
   theEagle.update();
   theLeif.update();
+  
+ // collisionCheck();
 }
