@@ -13,5 +13,8 @@ void keyPressed() {
   case 'd':
     theEagle.rightThruster = !theEagle.rightThruster;
     break;
+  case 'l':
+    theLeif.hit = true;
+    break;
   }
 }
