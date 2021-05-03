@@ -3,8 +3,10 @@ class Leif {
   PVector position;
   PVector velocity;
   PVector acceleration;
-  
+
   float speed = 2.5;
+
+  boolean hit = false;
 
   Leif() {
     position = new PVector(600, 0);
@@ -46,6 +48,9 @@ class Leif {
       velocity = PVector.sub(theEagle.position, position);
       velocity.setMag(speed);
 
+      if (hit) {
+        state = 1;
+      }
     }
   }
 }
