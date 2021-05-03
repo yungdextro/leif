@@ -1,9 +1,11 @@
 Lander theEagle;
 Leif theLeif;
+Planet thePlanet;
 
 int state = 0;
 
-PImage theEagleImage, skyImage, theLeifImage, FlameImage, theLeifGameOverImage, theLeifGameOverImage2;
+PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
+
 
 float gravity = 0.003;
 
@@ -15,16 +17,22 @@ void setup() {
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
   skyImage = loadImage("bilder/himlen2.png");
   FlameImage = loadImage("bilder/Flame.png");
+
   theLeifGameOverImage = loadImage("bilder/big leif-1.png");
   theLeifGameOverImage2 = loadImage("bilder/big leif-2.png");
+  mountainImage = loadImage("bilder/moon background-1.png");
+  
+ // groundImage = loadImage("");
+
 
   theEagle = new Lander();
   theLeif = new Leif();
+  thePlanet = new Planet();
 }
 
 void draw() {
-  image(skyImage, 0, 0);
 
+  thePlanet.update();
   theEagle.update();
   theLeif.update();
 
