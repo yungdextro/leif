@@ -5,7 +5,7 @@ class Lander {
   PVector acceleration;
   PVector totalForce;
 
-  float thrusterForce = 1.2;
+  float thrusterForce = 0.8;
   float mass = 100;
 
   Boolean frontThruster = false;
