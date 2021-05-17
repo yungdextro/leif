@@ -3,12 +3,9 @@ class Rock {
   PVector position;
   PImage rockImage;
 
-
   Rock(float x,float y, PImage _rockImage) {
     position = new PVector(x,y);
-    
     rockImage = _rockImage;
-
   }
 
   void display() {

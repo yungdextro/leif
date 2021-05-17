@@ -4,6 +4,8 @@ class Leif {
   PVector velocity;
   PVector acceleration;
 
+  float speed = 1.5;
+
   Leif() {
     position = new PVector(600, 0);
     velocity = new PVector(-0.3, 0.3);
@@ -13,12 +15,7 @@ class Leif {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-    //  rotate(velocity.heading() + radians(90));
-    
-    
     image(theLeifImage, 0, 0);
-    
-    
     popMatrix();
   }
 
@@ -47,7 +44,7 @@ class Leif {
 
     if (frameCount % 200 == 0) {
       velocity = PVector.sub(theEagle.position, position);
-      velocity.setMag(0.5);
+      velocity.setMag(speed);
 
     }
   }
