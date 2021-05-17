@@ -11,15 +11,18 @@ class Dashboard {
   }
   
   void displayDash(){
-    
+    pushMatrix();
+    //image(Matare, 0, 0);
   }
   
   void displayXspeedDial(){
    
     float xspeed = theEagle.velocity.x;
-    
-   // textSize ...
-    // text(xspeed, lkjk, ljlkj);
+    pushMatrix();
+    textSize(100);
+   text(xspeed + "km/h", 100 , 100);
+    fill (255,0,0);
+    popMatrix();
   }
   
 }
