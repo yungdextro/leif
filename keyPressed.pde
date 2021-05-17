@@ -13,4 +13,5 @@ void keyPressed() {
   case 'd':
     theEagle.rightThruster = !theEagle.rightThruster;
     break;
+  }
 }
