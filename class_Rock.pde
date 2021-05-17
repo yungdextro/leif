@@ -5,7 +5,6 @@ class Rock {
 
   Rock(float x,float y, PImage _rockImage) {
     position = new PVector(x,y);
-    
     rockImage = _rockImage;
   }
 
