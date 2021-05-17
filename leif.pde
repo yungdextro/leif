@@ -3,8 +3,9 @@ Leif theLeif;
 Planet thePlanet;
 Rock[] rocks;
 
+
 float gravity = 0.003;
-int numRocks = 200;
+int numRocks = 30;
 int state = 0;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
@@ -12,6 +13,8 @@ PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockIma
 void setup() {
 
   size(800, 600);
+  
+
 
   theEagleImage = loadImage("bilder/theEagle.png");
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
