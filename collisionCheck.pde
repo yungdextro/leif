@@ -1,11 +1,11 @@
 void collisionCheck() {
 
   if (theEagle.position.dist(theLeif.position) < 40){
-   state = 1; 
+   state = 2;
   }
   
-  
-  if (theEagle.position.dist(theLeif.position) < 40){
-   state = 1; 
+  if (theEagle.position.y > height - theEagleImage.height){
+    state = 3;
   }
+  
 }

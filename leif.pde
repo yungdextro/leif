@@ -4,8 +4,8 @@ Planet thePlanet;
 Rock[] rocks;
 
 float gravity = 0.003;
-int numRocks = 200;
-int state = 0;
+int numRocks = 70;
+int state = 1;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
 
@@ -44,21 +44,34 @@ void setup() {
 
 void draw() {
 
-  thePlanet.update();
-
-
-  for (int i = 0; i < numRocks; i++) {
-    rocks[i].update();
-  }
-  theEagle.update();
-  theLeif.update();
-
-  collisionCheck();
-
+  // Game state
   if (state == 1) {
+    thePlanet.update();
+
+
+    for (int i = 0; i < numRocks; i++) {
+      rocks[i].update();
+    }
+    theEagle.update();
+    theLeif.update();
+
+    collisionCheck();
+  }
+
+  // Collision with Leif
+  if (state == 2) { 
     pushMatrix();
     translate(width/2, height/2);
     image(theLeifGameOverImage, 0, 0);
     popMatrix();
+  }
+
+  // Landing 
+  if (state == 3) {
+    
+    noLoop();
+    
+    
+    // Landing code here
   }
 }
