@@ -59,18 +59,19 @@ void draw() {
 
   // Collision with Leif
   if (state == 2) { 
-    pushMatrix();
-    translate(width/2, height/2);
-    image(theLeifGameOverImage, 0, 0);
-    popMatrix();
+    gameOverLeif()
   }
+
+
 
   // Landing 
   if (state == 3) {
-    
-    noLoop();
-    
-    
+
+    if (theEagle.velocity.x > 10 || theEagle.velocity.y > 10) {
+      gameOverCrashLanding()
+    }
+
+
     // Landing code here
   }
 }
