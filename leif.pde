@@ -4,7 +4,7 @@ Planet thePlanet;
 Rock[] rocks;
 
 float gravity = 0.003;
-int numRocks = 70;
+int numRocks = 30;
 int state = 1;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
