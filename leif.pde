@@ -23,8 +23,7 @@ void setup() {
   rockImage1 = loadImage("bilder/rock1.png");
   rockImage2 = loadImage("bilder/rock2.png");
   rockImage3 = loadImage("bilder/rock3.png");
-
-  // groundImage = loadImage("");
+  groundImage = loadImage("bilder/ground.JPG");
 
 
   theEagle = new Lander();
