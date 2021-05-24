@@ -4,7 +4,7 @@ Planet thePlanet;
 Rock[] rocks;
 
 float gravity = 0.003;
-int numRocks = 30;
+int numRocks = 60;
 int state = 1;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
@@ -45,33 +45,45 @@ void draw() {
 
   // Game state
   if (state == 1) {
+    
+    // Update objects
     thePlanet.update();
-
-
     for (int i = 0; i < numRocks; i++) {
       rocks[i].update();
     }
     theEagle.update();
     theLeif.update();
-
+    
+    // Check for collision with Leif
     collisionCheck();
+    
+    // Temporary velocity display
+    text(theEagle.velocity.x, 50, 50);
+    text(theEagle.velocity.y, 50, 70);
+    text(theEagle.fuelRem, 50, 90);
   }
 
-  // Collision with Leif
+
+  // State for collision with Leif
   if (state == 2) { 
     gameOverLeif();
   }
 
 
-
-  // Landing 
+  // Landing state
   if (state == 3) {
 
-    if (theEagle.velocity.x > 10 || theEagle.velocity.y > 10) {
+    if (abs(theEagle.velocity.x) > 0.2 || abs(theEagle.velocity.y) > 0.2) {
       gameOverCrashLanding();
+      text("YOU CRASHED WITH SPEED", 100, 100);
+      noLoop();
+    } else if (checkCollisionRocks()) {
+      gameOverCrashLanding();
+      text("YOU CRASHED WITH ROCKS", 100, 100);
+      noLoop();
+    } else {
+      text("YOU WIN", 100, 100);
+      noLoop();
     }
-
-
-    // Landing code here
   }
 }

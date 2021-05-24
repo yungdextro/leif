@@ -27,36 +27,32 @@ class Lander {
     translate(position.x, position.y);
     image(theEagleImage, 0, 0);
 
-    if (frontThruster) {
+    if (frontThruster && (fuelRem > 0) ){
       pushMatrix();
       translate(-9, -50);
       image(FlameImage, 0, 0);
       popMatrix();
-      fuelRem--;
     }
-    if (backThruster) {
+    if (backThruster && (fuelRem > 0) ) {
       pushMatrix();
       translate(90, 145);
       rotate(radians(180));
       image(FlameImage, 0, 0);
       popMatrix();
-      fuelRem--;
     }
-    if (leftThruster) {
+    if (leftThruster && (fuelRem > 0) ) {
       pushMatrix();
       translate(-50, 100);
       rotate(radians(-90));
       image(FlameImage, 0, 0);
       popMatrix();
-      fuelRem--;
     }
-    if (rightThruster) {
+    if (rightThruster && (fuelRem > 0) ) {
       pushMatrix();
       translate(130, 0);
       rotate(radians(90));
       image(FlameImage, 0, 0);
       popMatrix();
-      fuelRem--;
     }
 
     popMatrix();
@@ -67,16 +63,32 @@ class Lander {
     //Calculate total force
     totalForce.mult(0);
     if (frontThruster) {
-      totalForce.add(0, thrusterForce);
+      
+      if (fuelRem > 0) {
+        totalForce.add(0, thrusterForce);
+        fuelRem--;
+      }
     }
     if (backThruster) {
-      totalForce.add(0, -thrusterForce);
+      
+      if (fuelRem > 0) {
+        totalForce.add(0, -thrusterForce);
+        fuelRem--;
+      }
     }
     if (leftThruster) {
-      totalForce.add(thrusterForce, 0);
+      
+      if (fuelRem > 0) {
+        totalForce.add(thrusterForce, 0);
+        fuelRem--;
+      }
     }
     if (rightThruster) {
-      totalForce.add(-thrusterForce, 0);
+      
+      if (fuelRem > 0) {
+        totalForce.add(-thrusterForce, 0);
+        fuelRem--;
+      }
     }
     totalForce.add(0, gravity*mass);
 
