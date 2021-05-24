@@ -59,7 +59,7 @@ void draw() {
 
   // Collision with Leif
   if (state == 2) { 
-    gameOverLeif()
+    gameOverLeif();
   }
 
 
@@ -68,7 +68,7 @@ void draw() {
   if (state == 3) {
 
     if (theEagle.velocity.x > 10 || theEagle.velocity.y > 10) {
-      gameOverCrashLanding()
+      gameOverCrashLanding();
     }
 
 
