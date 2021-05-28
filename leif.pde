@@ -5,6 +5,7 @@ Rock[] rocks;
 
 float gravity = 0.003;
 int numRocks = 60;
+
 int state = 1;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
@@ -12,7 +13,8 @@ PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockIma
 void setup() {
 
   size(800, 600);
-
+  
+  // Load the images
   theEagleImage = loadImage("bilder/theEagle.png");
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
   skyImage = loadImage("bilder/himlen2.png");
@@ -25,7 +27,7 @@ void setup() {
   rockImage3 = loadImage("bilder/rock3.png");
   groundImage = loadImage("bilder/ground.JPG");
 
-
+  // Create all objects
   theEagle = new Lander();
   theLeif = new Leif();
   thePlanet = new Planet();
