@@ -11,8 +11,9 @@ void collisionCheck() {
 
 
 boolean checkCollisionRocks() {
+  
+  PVector theEagleLandingPos = new PVector(theEagle.position.x + theEagleImage.width / 2, theEagle.position.y + theEagleImage.height);
   for (int i = 0; i < numRocks; i++) {
-    PVector theEagleLandingPos = new PVector(theEagle.position.x, theEagle.position.y + theEagleImage.height);
     if (theEagleLandingPos.dist(rocks[i].position) < 30) {
       return true;
     }

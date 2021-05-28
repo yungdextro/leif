@@ -62,6 +62,7 @@ class Lander {
 
     //Calculate total force
     totalForce.mult(0);
+    
     if (frontThruster) {
       
       if (fuelRem > 0) {
