@@ -9,6 +9,9 @@ void gameOverLeif() {
 
 void gameOverSpeedLanding() {
   
+  // Code for visual crash
+  
+  
   // Temporary game over screen
   pushMatrix();
   translate(width/2, height/2);
@@ -18,6 +21,9 @@ void gameOverSpeedLanding() {
 }
 
 void gameOverRockyLanding() {
+  
+   // Code for visual crash
+    
   
   // Temporary game over screen
   pushMatrix();
