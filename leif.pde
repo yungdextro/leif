@@ -76,11 +76,11 @@ void draw() {
   if (state == 3) {
 
     if (abs(theEagle.velocity.x) > 0.2 || abs(theEagle.velocity.y) > 0.2) {
-      gameOverCrashLanding();
+      gameOverSpeedLanding();
       text("YOU CRASHED WITH SPEED", 100, 100);
       noLoop();
     } else if (checkCollisionRocks()) {
-      gameOverCrashLanding();
+      gameOverRockyLanding();
       text("YOU CRASHED WITH ROCKS", 100, 100);
       noLoop();
     } else {
