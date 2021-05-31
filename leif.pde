@@ -13,7 +13,7 @@ float minLandSpeed = 0.2;
 
 int state = 1;
 
-PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2, dashImage, explosionImage;
+PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2, dashImage, explosionImage, GameOverImage;
 
 void setup() {
 
@@ -33,6 +33,7 @@ void setup() {
   groundImage = loadImage("bilder/ground.JPG");
   dashImage = loadImage("bilder/Dash.png");
   explosionImage = loadImage("bilder/explosion.png");
+  GameOverImage = loadImage("bilder/GAME OVER.png");
   
   // Create all objects
   theEagle = new Lander();
