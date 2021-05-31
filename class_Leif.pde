@@ -4,7 +4,7 @@ class Leif {
   PVector velocity;
   PVector acceleration;
 
-  float speed = 1.0;
+  float speed = leifSpeed;
 
   Leif() {
     position = new PVector(600, 0);

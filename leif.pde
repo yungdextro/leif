@@ -6,6 +6,10 @@ Dashboard theDash;
 
 float gravity = 0.003;
 int numRocks = 60;
+float leifSpeed = 1.0;
+int tankVolume = 1000;
+float minRockDist = 30;
+float minLandSpeed = 0.2;
 
 int state = 1;
 
@@ -76,7 +80,7 @@ void draw() {
   // Landing state
   if (state == 3) {
 
-    if (abs(theEagle.velocity.x) > 0.2 || abs(theEagle.velocity.y) > 0.2) {
+    if (abs(theEagle.velocity.x) > minLandSpeed || abs(theEagle.velocity.y) > minLandSpeed) {
       gameOverSpeedLanding();
       text("YOU CRASHED WITH SPEED", 100, 100);
       noLoop();

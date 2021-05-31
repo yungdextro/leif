@@ -19,7 +19,7 @@ class Lander {
     velocity = new PVector(0.3, 0.3);
     acceleration = new PVector(0, 0);
     totalForce = new PVector(0, 0);
-    fuelRem = 1000;
+    fuelRem = tankVolume;
   }
 
   void display() {
