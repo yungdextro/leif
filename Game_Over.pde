@@ -10,7 +10,11 @@ void gameOverLeif() {
 void gameOverSpeedLanding() {
   
   // Code for visual crash
-  
+  pushMatrix();
+  translate(theEagle.position.x-30, theEagle.position.y-50);
+  explosionImage.resize(175, 175);
+  image(explosionImage, 0, 0);
+  popMatrix(); 
   
   // Temporary game over screen
   pushMatrix();

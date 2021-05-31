@@ -9,7 +9,7 @@ int numRocks = 60;
 
 int state = 1;
 
-PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2,dashImage;
+PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2, dashImage, explosionImage;
 
 void setup() {
 
@@ -28,7 +28,8 @@ void setup() {
   rockImage3 = loadImage("bilder/rock3.png");
   groundImage = loadImage("bilder/ground.JPG");
   dashImage = loadImage("bilder/Dash.png");
-
+  explosionImage = loadImage("bilder/explosion.png");
+  
   // Create all objects
   theEagle = new Lander();
   theLeif = new Leif();
