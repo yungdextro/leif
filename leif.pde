@@ -2,13 +2,14 @@ Lander theEagle;
 Leif theLeif;
 Planet thePlanet;
 Rock[] rocks;
+Dashboard theDash;
 
 float gravity = 0.003;
 int numRocks = 60;
 
 int state = 1;
 
-PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2;
+PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2,dashImage;
 
 void setup() {
 
@@ -26,12 +27,14 @@ void setup() {
   rockImage2 = loadImage("bilder/rock2.png");
   rockImage3 = loadImage("bilder/rock3.png");
   groundImage = loadImage("bilder/ground.JPG");
+  dashImage = loadImage("bilder/Dash.png");
 
   // Create all objects
   theEagle = new Lander();
   theLeif = new Leif();
   thePlanet = new Planet();
   rocks = new Rock[numRocks];
+  theDash = new Dashboard();
   for (int i = 0; i < numRocks; i++) {
     if (i % 3 == 0) {
       rocks[i] = new Rock(random(0, width), random(float(height - 150), float(height)), rockImage1);
@@ -50,6 +53,7 @@ void draw() {
     
     // Update objects
     thePlanet.update();
+    theDash.update();
     for (int i = 0; i < numRocks; i++) {
       rocks[i].update();
     }
@@ -59,10 +63,6 @@ void draw() {
     // Check for collision with Leif
     collisionCheck();
     
-    // Temporary velocity display
-    text(theEagle.velocity.x, 50, 50);
-    text(theEagle.velocity.y, 50, 70);
-    text(theEagle.fuelRem, 50, 90);
   }
 
 
