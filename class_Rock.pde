@@ -11,7 +11,7 @@ class Rock {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-    image(rockImage, 0, 0);
+    image(rockImage, -rockImage.width/2, -rockImage.height/2);
     popMatrix();
   }
 

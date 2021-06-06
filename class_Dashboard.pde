@@ -17,7 +17,7 @@ class Dashboard {
     float xspeed = theEagle.velocity.x;
     pushMatrix();
     textSize(30);
-   text(round(xspeed*1000) + "km/h", 23 , 79);
+   text(round(xspeed*100) + "km/h", 23 , 79);
     fill (255,255,255);
     popMatrix();
   }
@@ -32,7 +32,7 @@ class Dashboard {
     float yspeed = theEagle.velocity.y;
     pushMatrix();
     textSize(30);
-   text(round(yspeed*1000) + "km/h", 241 , 79);
+   text(round(yspeed*100) + "km/h", 241 , 79);
     fill (255,0,0);
     popMatrix();
     
@@ -42,7 +42,7 @@ class Dashboard {
     float fuel = theEagle.fuelRem;
     pushMatrix();
     textSize(25);
-   text(round(theEagle.fuelRem) + "%", 170 , 76);
+   text(round(100*theEagle.fuelRem/tankVolume) + "%", 170 , 76);
     fill (255,255,255);
     popMatrix();
   }

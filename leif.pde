@@ -76,6 +76,7 @@ void draw() {
   if (state == 2) { 
     gameOverLeif();
   }
+  
 
 
   // Landing state
