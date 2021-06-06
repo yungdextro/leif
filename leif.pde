@@ -6,7 +6,7 @@ Dashboard theDash;
 
 float gravity = 0.003;
 int numRocks = 60;
-float leifSpeed = 1.0;
+float leifSpeed = 0.0;
 int tankVolume = 1000;
 float minRockDist = 30;
 float minLandSpeed = 0.2;
@@ -83,14 +83,12 @@ void draw() {
 
     if (abs(theEagle.velocity.x) > minLandSpeed || abs(theEagle.velocity.y) > minLandSpeed) {
       gameOverSpeedLanding();
-      text("YOU CRASHED WITH SPEED", 100, 100);
       noLoop();
     } else if (checkCollisionRocks()) {
       gameOverRockyLanding();
-      text("YOU CRASHED WITH ROCKS", 100, 100);
       noLoop();
     } else {
-      text("YOU WIN", 100, 100);
+      gameOverWin();
       noLoop();
     }
   }
