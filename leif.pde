@@ -1,3 +1,5 @@
+import processing.sound.*;
+
 Lander theEagle;
 Leif theLeif;
 Planet thePlanet;
@@ -6,7 +8,7 @@ Dashboard theDash;
 
 float gravity = 0.003;
 int numRocks = 60;
-float leifSpeed = 0.0;
+float leifSpeed = 1.0;
 int tankVolume = 1000;
 float minRockDist = 30;
 float minLandSpeed = 0.2;
@@ -14,11 +16,12 @@ float minLandSpeed = 0.2;
 int state = 1;
 
 PImage theEagleImage, skyImage, theLeifImage, FlameImage, mountainImage, rockImage1, rockImage2, rockImage3, groundImage, theLeifGameOverImage, theLeifGameOverImage2, dashImage, explosionImage, GameOverImage;
+SoundFile leifDirectionSound, thrustStartSound, explosionSound, leifLaughSound;
 
 void setup() {
 
   size(800, 600);
-  
+
   // Load the images
   theEagleImage = loadImage("bilder/theEagle.png");
   theLeifImage = loadImage("bilder/leif in an alien saucer 1.png");
@@ -34,7 +37,12 @@ void setup() {
   dashImage = loadImage("bilder/Dash.png");
   explosionImage = loadImage("bilder/explosion.png");
   GameOverImage = loadImage("bilder/GAME OVER.png");
-  
+
+  leifDirectionSound = new SoundFile(this, "ljud/leifDirectionChange.wav");
+  thrustStartSound = new SoundFile(this, "ljud/thrustStart.wav");
+  explosionSound = new SoundFile(this, "ljud/explosion.wav");
+  leifLaughSound = new SoundFile(this, "ljud/leifLaugh.wav");
+
   // Create all objects
   theEagle = new Lander();
   theLeif = new Leif();
@@ -56,7 +64,7 @@ void draw() {
 
   // Game state
   if (state == 1) {
-    
+
     // Update objects
     thePlanet.update();
     theDash.update();
@@ -65,10 +73,9 @@ void draw() {
     }
     theEagle.update();
     theLeif.update();
-    
+
     // Check for collision with Leif
     collisionCheck();
-    
   }
 
 
@@ -76,7 +83,7 @@ void draw() {
   if (state == 2) { 
     gameOverLeif();
   }
-  
+
 
 
   // Landing state

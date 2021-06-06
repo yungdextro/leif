@@ -45,7 +45,7 @@ class Leif {
     if (frameCount % 200 == 0) {
       velocity = PVector.sub(theEagle.position, position);
       velocity.setMag(speed);
-
+      leifDirectionSound.play();
     }
   }
 }

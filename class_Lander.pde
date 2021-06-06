@@ -27,7 +27,11 @@ class Lander {
     translate(position.x, position.y);
     image(theEagleImage, 0, 0);
 
-    if (frontThruster && (fuelRem > 0) ){
+    if (frontThruster || backThruster || leftThruster || rightThruster) {
+      thrustStartSound.play();
+    }
+
+    if (frontThruster && (fuelRem > 0) ) {
       pushMatrix();
       translate(-9, -50);
       image(FlameImage, 0, 0);
@@ -62,30 +66,30 @@ class Lander {
 
     //Calculate total force
     totalForce.mult(0);
-    
+
     if (frontThruster) {
-      
+
       if (fuelRem > 0) {
         totalForce.add(0, thrusterForce);
         fuelRem--;
       }
     }
     if (backThruster) {
-      
+
       if (fuelRem > 0) {
         totalForce.add(0, -thrusterForce);
         fuelRem--;
       }
     }
     if (leftThruster) {
-      
+
       if (fuelRem > 0) {
         totalForce.add(thrusterForce, 0);
         fuelRem--;
       }
     }
     if (rightThruster) {
-      
+
       if (fuelRem > 0) {
         totalForce.add(-thrusterForce, 0);
         fuelRem--;
